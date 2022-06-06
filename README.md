@@ -8,3 +8,5 @@ Initially preferred fetching data with GET request but noticed some strange erro
 ## Would like to do:
 
 Testing
+
+Admin panel with dropdown selector for each organiser
