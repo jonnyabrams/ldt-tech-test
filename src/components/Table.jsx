@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Table = ({ data }) => {
   const capitalise = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -15,7 +17,7 @@ const Table = ({ data }) => {
         </tr>
         {data.map((item) => ( 
           <tr key={item.id}>
-            <td>{capitalise(item.firstName)} {capitalise(item.lastName)}</td>
+            <Link to={`/runners/${item.id}`}><td>{capitalise(item.firstName)} {capitalise(item.lastName)}</td></Link>
             <td>{item.eventTitle}</td>
             <td>{item.raceTitle}</td>
             <td>{item.organiserTitle}</td>
