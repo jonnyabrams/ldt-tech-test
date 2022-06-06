@@ -8,6 +8,8 @@ I also created dynamic routes for each runner containing some key information, a
 
 Ideally I would have created an in-depth admin panel with a dropdown selector for each organisation on the home page, providing them with an in-depth look at startlists for each race and a breakdown of ticket sales for each one.
 
+Additionally I would have preferred to fetch the data with a GET request but I noticed some weird errors stemming from what seemed to be multiple bookings with the same IDs, so in the end I stored the data locally so I could manually change these duplicates.
+
 ## Instructions for Use
 
 * Clone this repository
