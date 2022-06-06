@@ -12,4 +12,4 @@ Ideally I would have created an in-depth admin panel with a dropdown selector fo
 
 * Clone this repository
 * Install dependencies by running `npm install` in the terminal
-* Run `npm start` and visit [http://localhost:3000](http://localhost:3000)
+* Run `npm start` and navigate to [http://localhost:3000](http://localhost:3000) in the browser if it doesn't take you there automatically
