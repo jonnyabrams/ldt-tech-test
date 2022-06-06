@@ -1,18 +1,15 @@
 # Let's Do This - tech test
 
-Steps:
+This is my attempt at the tech test for [Let's Do This](https://www.letsdothis.com/gb), which asked for an array of JSON objects containing booking data to be sorted into startlists for each race, along with functionality for each event organiser to see how much they've made in ticket sales.
 
-Initially preferred fetching data with GET request but noticed some strange errors that seemed to be stemming from a number of the runners having the same ID, so I decided to store the JSON data locally (as runnersData.js) so I could manually change these duplicates more easily
+For this I created a search function that enables the user to filter the data shown onscreen by runner name, event, race title or organiser, returning a total for the ticket sales in each instance.
 
-created a React table with columns for runner name (interpolated first and last names together, both capitalised), event, race and organiser
+I also created dynamic routes for each runner containing some key information, and with more time I would like to have done this for each race and organisation. 
 
-implemented search function with a live running total for ticket sales that changed dynamically depending on what's showing on the screen, so can show totals by organiser, event, race or even names (not sure why you'd want a total for people named Stephen, but you can have it!)
+Ideally I would have created an in-depth admin panel with a dropdown selector for each organisation on the home page, providing them with an in-depth look at startlists for each race and a breakdown of ticket sales for each one.
 
-created a Home component to display all this and did some extremely basic CSS for it
+## Instructions for Use
 
-
-## Would like to do:
-
-Testing
-
-Admin panel with dropdown selector for each organiser
+* Clone this repository
+* Install dependencies by running `npm install` in the terminal
+* Run `npm start` and visit [http://localhost:3000](http://localhost:3000)
