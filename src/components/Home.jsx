@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { bookings } from '../bookings'
+import { bookings, raceInfo } from '../bookings'
 import Table from './Table'
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
         Total ticket sales: £{(totalPrice / 100).toFixed(2)}
       </div>
        
-      <Table data={tableData} />
+      <Table data={tableData} data2={raceInfo} />
     </>
   )
 }

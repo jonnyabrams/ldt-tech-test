@@ -2859,3 +2859,54 @@ export const bookings = [{
   "ticketId": "8624157539",
   "ticketTitle": "Half Marathon"
 }]
+
+const raceDetails = bookings.reduce((acc, item) => {
+  const details = acc[item.raceId] || {};
+
+  details.name = item.raceTitle
+  details.id = item.raceId
+  details.startDate = item.raceStartDate
+  details.event = item.eventTitle
+  details.organiser = item.organiserTitle
+  details.runners = []
+  details.price = item.ticketPrice.value / 100
+  details.total = 0
+
+  bookings.forEach((runner) => {
+        if (item.raceTitle === runner.raceTitle) {
+          details.runners.push(`${runner.firstName} ${runner.lastName}`)
+          details.total += item.ticketPrice.value / 100
+        }
+      })
+
+  acc[item.raceTitle] = details;
+
+  return acc;
+}, []);
+
+
+
+const allRaces = bookings.map((runner) => {
+  return `${runner.raceTitle},,${runner.eventTitle}`
+})
+
+const uniqueRaces = [...new Set(allRaces)]
+
+export const raceInfo = uniqueRaces.map((race) => {
+  return { name: race.split(',,')[0], event: race.split(',,')[1], id: '', runners: []}
+})
+
+const capitalise = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+bookings.forEach((booking) => {
+  raceInfo.forEach((race) => {
+    if (booking.raceTitle === race.name && booking.eventTitle === race.event) {
+      race.runners.push(`${capitalise(booking.firstName)} ${capitalise(booking.lastName)}`)
+      race.id = booking.raceId
+    }
+  })
+})
+
+console.log(raceInfo)
